@@ -37,13 +37,13 @@ public class User {
 
 	    public void deposit(double amount) {
 	        balance += amount;
-	        transactionHistory.add("Deposited: $" + amount);
+	        transactionHistory.add("Deposited: " + amount);
 	    }
 
 	    public boolean withdraw(double amount) {
 	        if (amount <= balance) {
 	            balance -= amount;
-	            transactionHistory.add("Withdrew: $" + amount);
+	            transactionHistory.add("Withdrew: " + amount);
 	            return true;
 	        } else {
 	            return false;
@@ -54,8 +54,8 @@ public class User {
 	        if (amount <= balance) {
 	            balance -= amount;
 	            toUser.deposit(amount);
-	            transactionHistory.add("Transferred: $" + amount + " to " + toUser.getName());
-	            toUser.transactionHistory.add("Received: $" + amount + " from " + this.name);
+	            transactionHistory.add("Transferred: " + amount + " to " + toUser.getName());
+	            toUser.transactionHistory.add("Received: " + amount + " from " + this.name);
 	            return true;
 	        } else {
 	            return false;
