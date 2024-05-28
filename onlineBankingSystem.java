@@ -104,7 +104,7 @@ public class OnlineBankSystem {
 	        double amount = scanner.nextDouble();
 	        scanner.nextLine(); // Consume newline
 	        user.deposit(amount);
-	        System.out.println("Deposited: $" + amount);
+	        System.out.println("Deposited: " + amount);
 	    }
 
 	    private static void withdrawFunds(User user) {
@@ -112,7 +112,7 @@ public class OnlineBankSystem {
 	        double amount = scanner.nextDouble();
 	        scanner.nextLine(); // Consume newline
 	        if (user.withdraw(amount)) {
-	            System.out.println("Withdrew: $" + amount);
+	            System.out.println("Withdrew: " + amount);
 	        } else {
 	            System.out.println("Insufficient balance.");
 	        }
@@ -128,7 +128,7 @@ public class OnlineBankSystem {
 	        User recipient = users.get(recipientEmail);
 	        if (recipient != null) {
 	            if (user.transfer(recipient, amount)) {
-	                System.out.println("Transferred: $" + amount + " to " + recipient.getName());
+	                System.out.println("Transferred: " + amount + " to " + recipient.getName());
 	            } else {
 	                System.out.println("Insufficient balance.");
 	            }
